@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+    <!-- Project CSS -->
+
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/normalize.css " type="text/css ">
+
+    <title>Darāmo lietu saraksts</title>
+</head>
+
+<body>
+
+    <div class="row ">
+        <div class="container">
+
+            <div class="heading-container">
+                <h2>Darāmo lietu saraksts</h2>
+            </div>
+
+            <div class="text-container">
+                <ul>
+                    {% for todo_list in object_list %}
+                    <li>
+                        <form action="post">
+                            <div class="form-container">
+                                <div class="checkbox-container ">
+                                    <div class="checkbox">
+                                        <input type="checkbox">
+                                        <label for="checkbox-title"> {{ todo_list.title }} </label>
+                                    </div>
+
+                                    <div class="text-container">
+                                        {{ todo_list.text }}
+                                    </div>
+                                </div>
+
+                                <div class="btn">
+                                    <button type="submit">Labot</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="btn">
+                    <a href="../templates/add_new_to_do.html">
+                        <button type="submit">Pievienot jaunu</button>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js " integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ " crossorigin="anonymous "></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js " integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd " crossorigin="anonymous "></script>
+
+</body>
+
+</html>
